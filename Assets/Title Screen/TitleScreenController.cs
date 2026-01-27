@@ -8,6 +8,11 @@ public class TitleScreenController : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void OptionsMenu()
+    {
+        SceneManager.LoadScene("OptionsMenu");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
