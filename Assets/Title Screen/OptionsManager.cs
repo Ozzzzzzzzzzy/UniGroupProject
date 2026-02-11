@@ -54,22 +54,44 @@ public class OptionsManager : MonoBehaviour
 
     void SetupResolutions()
     {
-        Resolutions = Screen.resolutions;
+        Resolution[] AllResolutions = Screen.resolutions;
         ResolutionDropdown.ClearOptions();
 
         var Options = new System.Collections.Generic.List<string>();
+        var UniqueResolutions = new System.Collections.Generic.List<Resolution>();
+
         int CurrentResolutionIndex = 0;
 
-        for (int i = 0; i < Resolutions.Length; i++)
+        for (int i = 0; i < AllResolutions.Length; i++)
         {
-            string Option = Resolutions[i].width + " x " + Resolutions[i].height;
-            Options.Add(Option);
+            Resolution res = AllResolutions[i];
 
-            if (Resolutions[i].width == Screen.currentResolution.width && Resolutions[i].height == Screen.currentResolution.height)
+            // Check if we already added this width/height combo
+            bool Exists = false;
+            for (int j = 0; j < UniqueResolutions.Count; j++)
             {
-                CurrentResolutionIndex = i;
+                if (UniqueResolutions[j].width == res.width &&
+                    UniqueResolutions[j].height == res.height)
+                {
+                    Exists = true;
+                    break;
+                }
+            }
+
+            if (Exists)
+                continue;
+
+            UniqueResolutions.Add(res);
+            Options.Add(res.width + " x " + res.height);
+
+            if (res.width == Screen.currentResolution.width &&
+                res.height == Screen.currentResolution.height)
+            {
+                CurrentResolutionIndex = UniqueResolutions.Count - 1;
             }
         }
+
+        Resolutions = UniqueResolutions.ToArray();
 
         ResolutionDropdown.AddOptions(Options);
         ResolutionDropdown.value = CurrentResolutionIndex;
