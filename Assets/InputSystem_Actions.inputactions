@@ -993,52 +993,50 @@
             ]
         },
         {
-            "name": "Boat",
-            "id": "ba7221fa-053b-4ca5-a7ba-16b30f6d03b8",
+            "name": "Fishing",
+            "id": "92da09e5-d54d-4a2e-98e4-8cd52ad289f2",
             "actions": [
                 {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "db75dafd-7d88-4694-b89c-398da05a07ca",
-                    "expectedControlType": "Axis",
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "f82c05b4-97de-4d0b-bd0c-2048bca57752",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DropRod",
+                    "type": "Button",
+                    "id": "a4c05bb2-d7db-423c-aed0-d24d913d2e67",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "1D Axis",
-                    "id": "d29a8289-58ce-4b13-b311-fcc5e1aa5f90",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "32af4b1d-5260-49d7-ac49-3140be36228f",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
+                    "action": "New action",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "c99b7417-2d0b-4f2f-be59-b89c5093f2b6",
-                    "path": "<Keyboard>/a",
+                    "name": "",
+                    "id": "e88a7241-edab-4eaa-b0c4-e0ba3dc8c967",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "DropRod",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "e5d28b8d-c3d7-4e9f-9255-3774f10f3f97",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }
