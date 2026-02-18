@@ -1079,52 +1079,50 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Boat"",
-            ""id"": ""ba7221fa-053b-4ca5-a7ba-16b30f6d03b8"",
+            ""name"": ""Fishing"",
+            ""id"": ""92da09e5-d54d-4a2e-98e4-8cd52ad289f2"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""db75dafd-7d88-4694-b89c-398da05a07ca"",
-                    ""expectedControlType"": ""Axis"",
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""f82c05b4-97de-4d0b-bd0c-2048bca57752"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DropRod"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4c05bb2-d7db-423c-aed0-d24d913d2e67"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""d29a8289-58ce-4b13-b311-fcc5e1aa5f90"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""32af4b1d-5260-49d7-ac49-3140be36228f"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""c99b7417-2d0b-4f2f-be59-b89c5093f2b6"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""name"": """",
+                    ""id"": ""e88a7241-edab-4eaa-b0c4-e0ba3dc8c967"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""DropRod"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""e5d28b8d-c3d7-4e9f-9255-3774f10f3f97"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1215,16 +1213,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        // Boat
-        m_Boat = asset.FindActionMap("Boat", throwIfNotFound: true);
-        m_Boat_Move = m_Boat.FindAction("Move", throwIfNotFound: true);
+        // Fishing
+        m_Fishing = asset.FindActionMap("Fishing", throwIfNotFound: true);
+        m_Fishing_Newaction = m_Fishing.FindAction("New action", throwIfNotFound: true);
+        m_Fishing_DropRod = m_Fishing.FindAction("DropRod", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystem_Actions.UI.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Boat.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Boat.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Fishing.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Fishing.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1676,29 +1675,34 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// </summary>
     public UIActions @UI => new UIActions(this);
 
-    // Boat
-    private readonly InputActionMap m_Boat;
-    private List<IBoatActions> m_BoatActionsCallbackInterfaces = new List<IBoatActions>();
-    private readonly InputAction m_Boat_Move;
+    // Fishing
+    private readonly InputActionMap m_Fishing;
+    private List<IFishingActions> m_FishingActionsCallbackInterfaces = new List<IFishingActions>();
+    private readonly InputAction m_Fishing_Newaction;
+    private readonly InputAction m_Fishing_DropRod;
     /// <summary>
-    /// Provides access to input actions defined in input action map "Boat".
+    /// Provides access to input actions defined in input action map "Fishing".
     /// </summary>
-    public struct BoatActions
+    public struct FishingActions
     {
         private @InputSystem_Actions m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public BoatActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        public FishingActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Boat/Move".
+        /// Provides access to the underlying input action "Fishing/Newaction".
         /// </summary>
-        public InputAction @Move => m_Wrapper.m_Boat_Move;
+        public InputAction @Newaction => m_Wrapper.m_Fishing_Newaction;
+        /// <summary>
+        /// Provides access to the underlying input action "Fishing/DropRod".
+        /// </summary>
+        public InputAction @DropRod => m_Wrapper.m_Fishing_DropRod;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Boat; }
+        public InputActionMap Get() { return m_Wrapper.m_Fishing; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -1706,9 +1710,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="BoatActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="FishingActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(BoatActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(FishingActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -1716,14 +1720,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="BoatActions" />
-        public void AddCallbacks(IBoatActions instance)
+        /// <seealso cref="FishingActions" />
+        public void AddCallbacks(IFishingActions instance)
         {
-            if (instance == null || m_Wrapper.m_BoatActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_BoatActionsCallbackInterfaces.Add(instance);
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
+            if (instance == null || m_Wrapper.m_FishingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FishingActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+            @DropRod.started += instance.OnDropRod;
+            @DropRod.performed += instance.OnDropRod;
+            @DropRod.canceled += instance.OnDropRod;
         }
 
         /// <summary>
@@ -1732,21 +1739,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="BoatActions" />
-        private void UnregisterCallbacks(IBoatActions instance)
+        /// <seealso cref="FishingActions" />
+        private void UnregisterCallbacks(IFishingActions instance)
         {
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+            @DropRod.started -= instance.OnDropRod;
+            @DropRod.performed -= instance.OnDropRod;
+            @DropRod.canceled -= instance.OnDropRod;
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BoatActions.UnregisterCallbacks(IBoatActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="FishingActions.UnregisterCallbacks(IFishingActions)" />.
         /// </summary>
-        /// <seealso cref="BoatActions.UnregisterCallbacks(IBoatActions)" />
-        public void RemoveCallbacks(IBoatActions instance)
+        /// <seealso cref="FishingActions.UnregisterCallbacks(IFishingActions)" />
+        public void RemoveCallbacks(IFishingActions instance)
         {
-            if (m_Wrapper.m_BoatActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_FishingActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -1756,21 +1766,21 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="BoatActions.AddCallbacks(IBoatActions)" />
-        /// <seealso cref="BoatActions.RemoveCallbacks(IBoatActions)" />
-        /// <seealso cref="BoatActions.UnregisterCallbacks(IBoatActions)" />
-        public void SetCallbacks(IBoatActions instance)
+        /// <seealso cref="FishingActions.AddCallbacks(IFishingActions)" />
+        /// <seealso cref="FishingActions.RemoveCallbacks(IFishingActions)" />
+        /// <seealso cref="FishingActions.UnregisterCallbacks(IFishingActions)" />
+        public void SetCallbacks(IFishingActions instance)
         {
-            foreach (var item in m_Wrapper.m_BoatActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_FishingActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_BoatActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_FishingActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="BoatActions" /> instance referencing this action map.
+    /// Provides a new <see cref="FishingActions" /> instance referencing this action map.
     /// </summary>
-    public BoatActions @Boat => new BoatActions(this);
+    public FishingActions @Fishing => new FishingActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1986,18 +1996,25 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
     }
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Boat" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Fishing" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="BoatActions.AddCallbacks(IBoatActions)" />
-    /// <seealso cref="BoatActions.RemoveCallbacks(IBoatActions)" />
-    public interface IBoatActions
+    /// <seealso cref="FishingActions.AddCallbacks(IFishingActions)" />
+    /// <seealso cref="FishingActions.RemoveCallbacks(IFishingActions)" />
+    public interface IFishingActions
     {
         /// <summary>
-        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMove(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "DropRod" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDropRod(InputAction.CallbackContext context);
     }
 }
