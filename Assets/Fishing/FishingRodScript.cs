@@ -8,6 +8,8 @@ public class FishingRod : MonoBehaviour
     [SerializeField] private float MoveSpeed = 6f;
     [SerializeField] private Transform Hook;
 
+    [SerializeField] private ScoreManager ScoreManager;
+
     private enum State
     {
         IdleAtTop,
@@ -71,6 +73,8 @@ public class FishingRod : MonoBehaviour
 
                 if (caughtHuman != null)
                 {
+
+                    ScoreManager.CurrentScore += caughtHuman.Data.Value;
                     Destroy(caughtHuman.gameObject);
                     caughtHuman = null;
                 }
