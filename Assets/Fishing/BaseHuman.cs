@@ -5,6 +5,8 @@ public class BaseHuman : MonoBehaviour
     [Header("Runtime")]
     [SerializeField] private HumanData data;
 
+    public HumanData Data => data;
+
     private int direction;
     private float moveSpeed;
     private float despawnAtTime;
@@ -17,9 +19,7 @@ public class BaseHuman : MonoBehaviour
         moveSpeed = data != null ? data.MoveSpeed : 0f;
         despawnAtTime = Time.time + Mathf.Max(0f, lifetimeSeconds);
 
-        
         Instantiate(data.ModelPrefab, transform);
-        
     }
 
     private void Update()
