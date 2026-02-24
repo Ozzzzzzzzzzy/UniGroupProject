@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
     public GameObject PausePanel;
 
+    public MonoBehaviour PlayerController;
+
     private bool IsPaused = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             if (IsPaused)
                 Resume();
@@ -24,6 +27,9 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         IsPaused = true;
 
+        if (PlayerController != null)
+            PlayerController.enabled = false;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -33,6 +39,9 @@ public class PauseManager : MonoBehaviour
         PausePanel.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
+
+        if (PlayerController != null)
+            PlayerController.enabled = true;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
