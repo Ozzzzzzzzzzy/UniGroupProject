@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 public class PauseManager : MonoBehaviour
 {
     public GameObject PausePanel;
+    public GameObject PauseMenuPanel;   // Main pause buttons
+    public GameObject OptionsMenuPanel; // Options menu within pause menu
 
     public MonoBehaviour PlayerController;
 
@@ -24,6 +26,9 @@ public class PauseManager : MonoBehaviour
     public void Pause()
     {
         PausePanel.SetActive(true);
+        PauseMenuPanel.SetActive(true);
+        OptionsMenuPanel.SetActive(false);
+
         Time.timeScale = 0f;
         IsPaused = true;
 
@@ -37,6 +42,7 @@ public class PauseManager : MonoBehaviour
     public void Resume()
     {
         PausePanel.SetActive(false);
+
         Time.timeScale = 1f;
         IsPaused = false;
 
@@ -45,6 +51,20 @@ public class PauseManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    // Called by Options button
+    public void OpenOptions()
+    {
+        PauseMenuPanel.SetActive(false);
+        OptionsMenuPanel.SetActive(true);
+    }
+
+    // Called by Back button inside Options panel
+    public void CloseOptions()
+    {
+        OptionsMenuPanel.SetActive(false);
+        PauseMenuPanel.SetActive(true);
     }
 
     public void MainMenu()
