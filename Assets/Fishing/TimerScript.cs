@@ -8,14 +8,13 @@ public class TimerScript : MonoBehaviour
     float TimeLeft;
 
     [SerializeField] TMPro.TextMeshProUGUI TimerText;
-
+    [SerializeField] private ScoreManager ScoreManager;
 
     void Start()
     {
         TimeLeft = DefaultTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         TimeLeft -= Time.deltaTime;
@@ -24,6 +23,11 @@ public class TimerScript : MonoBehaviour
         if (TimeLeft < 0)
         {
             TimeLeft = 0;
+
+            int currentCurrency = PlayerPrefs.GetInt(CurrencyManager.CurrencyData, 0);
+            PlayerPrefs.SetInt(CurrencyManager.CurrencyData, currentCurrency + ScoreManager.CurrentScore);
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene("SampleScene");
         }
     }

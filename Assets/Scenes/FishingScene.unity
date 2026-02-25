@@ -656,6 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerScript
   TimerText: {fileID: 285951651}
+  ScoreManager: {fileID: 1305713492}
 --- !u!114 &1305713492
 MonoBehaviour:
   m_ObjectHideFlags: 0
