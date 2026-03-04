@@ -6,10 +6,12 @@ public class ShopScript : MonoBehaviour
 {
     private InputSystem_Actions input;
     private bool playerInside;
+    [SerializeField] private GameObject shopPanel;
 
     private void Awake()
     {
         input = new InputSystem_Actions();
+        shopPanel.SetActive(false);
     }
 
     private void OnEnable()

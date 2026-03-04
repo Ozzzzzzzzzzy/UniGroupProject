@@ -4,7 +4,7 @@ public class UpgradeManager : MonoBehaviour
 {
     public const string UpgradeData = "Fishing.Upgrade";
 
-    [SerializeField] private int baitUpgradeLevel = 3;
+    [SerializeField] private int baitUpgradeLevel = 1;
     public int BaitUpgradeLevel => baitUpgradeLevel;
 
     private void Awake()

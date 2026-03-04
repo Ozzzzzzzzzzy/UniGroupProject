@@ -45,10 +45,9 @@ GameObject:
   - component: {fileID: 5325020512647636130}
   - component: {fileID: 3728165964066698690}
   - component: {fileID: 8383362754633033950}
-  - component: {fileID: -5931258264144592520}
   m_Layer: 0
   m_Name: Playerobj
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,21 +193,6 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 5
   orientation: {fileID: 1238523911071414932}
---- !u!114 &-5931258264144592520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946138793776677687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12cff2a2f765b0743bc87fd45f9ce5db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
-  jumpForce: 5
-  orientation: {fileID: 0}
 --- !u!1 &4471199903768236432
 GameObject:
   m_ObjectHideFlags: 0
