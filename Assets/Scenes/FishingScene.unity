@@ -1773,10 +1773,30 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: e6a543c800c1efd4bbf25bbf7aa969bb, type: 2}
+    - target: {fileID: -6660667546965816040, guid: de18c959de870684ba831b8dbe7a9e3f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.308
+      objectReference: {fileID: 0}
+    - target: {fileID: -6660667546965816040, guid: de18c959de870684ba831b8dbe7a9e3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.47
+      objectReference: {fileID: 0}
+    - target: {fileID: -4722750124479102016, guid: de18c959de870684ba831b8dbe7a9e3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.89
+      objectReference: {fileID: 0}
     - target: {fileID: -3057072063225493679, guid: de18c959de870684ba831b8dbe7a9e3f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7f536898d270fe34e91f45e9acba9685, type: 2}
+    - target: {fileID: -1194667200029144278, guid: de18c959de870684ba831b8dbe7a9e3f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.308
+      objectReference: {fileID: 0}
+    - target: {fileID: -1194667200029144278, guid: de18c959de870684ba831b8dbe7a9e3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.549
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de18c959de870684ba831b8dbe7a9e3f, type: 3}
       propertyPath: m_Name
       value: FishingArea
