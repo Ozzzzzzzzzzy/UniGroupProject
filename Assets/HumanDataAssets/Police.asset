@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HumanData
   DisplayName: Police
   Value: 8
-  MoveSpeed: 6
-  ModelPrefab: {fileID: 919132149155446097, guid: d270bd7637a7bc04a89e0d84675dc023, type: 3}
+  MoveSpeed: 4
+  ModelPrefab: {fileID: 6103284674746234469, guid: 31672976dd436da4aa6d5641cb24e77c, type: 3}
