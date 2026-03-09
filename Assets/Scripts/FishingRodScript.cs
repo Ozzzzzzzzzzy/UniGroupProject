@@ -74,15 +74,7 @@ public class FishingRod : MonoBehaviour
                 if (caughtHuman != null)
                 {
                     int baitLevel = PlayerPrefs.GetInt(UpgradeManager.UpgradeData, 1);
-
-                    float multiplier = baitLevel switch
-                    {
-                        1 => 1f,
-                        2 => 1.5f,
-                        3 => 2f,
-                        4 => 3f,
-                        _ => 1f
-                    };
+                    float multiplier = UpgradeManager.GetBaitMultiplier(baitLevel);
 
                     int addScore = Mathf.RoundToInt(caughtHuman.Data.Value * multiplier);
                     ScoreManager.CurrentScore += addScore;

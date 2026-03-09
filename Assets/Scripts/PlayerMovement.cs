@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 5f;
     public Transform orientation;
 
+    public bool LockRotation = false;
+
     private InputSystem_Actions inputActions;
     private Rigidbody rb;
     private Vector2 moveInput;
@@ -45,9 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Rotate player body to match camera direction
-        transform.rotation = Quaternion.Euler(0, orientation.eulerAngles.y, 0);
-
         Vector3 moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }
