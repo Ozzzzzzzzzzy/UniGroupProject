@@ -3914,13 +3914,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1349524385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7f25e030e2fc34dab870c9c5a6741d, type: 3}
+  m_Script: {fileID: 11500000, guid: 24c011544e3558e40b80e38a3e8c0372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  PausePanel: {fileID: 762715956}
-  PauseMenuPanel: {fileID: 121451864}
-  OptionsMenuPanel: {fileID: 848850356}
-  PlayerController: {fileID: 5294469111080284230}
+  PausePanel: {fileID: 0}
+  PauseMenuPanel: {fileID: 0}
+  OptionsMenuPanel: {fileID: 0}
+  PlayerController: {fileID: 0}
 --- !u!4 &1349524387
 Transform:
   m_ObjectHideFlags: 0
@@ -10309,7 +10309,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1836167555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c2921f5513a4064b88736f52e4becd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7292c230fe14e2946b3a03f5e5ad3f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OptionsManager
 --- !u!4 &1836167557
@@ -11026,17 +11026,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd470456d404cc4dba6b26a6b0945fd, type: 3}
---- !u!114 &5294469111080284230 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3598343501286297346, guid: 4dd470456d404cc4dba6b26a6b0945fd, type: 3}
-  m_PrefabInstance: {fileID: 5294469111080284229}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121948bfd75b57a428e16ef758e82781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
 --- !u!1001 &6415610878967893623
 PrefabInstance:
   m_ObjectHideFlags: 0
