@@ -1709,8 +1709,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Increases points per human caught
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
+  m_sharedMaterial: {fileID: 5977635794522359019, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9707,10 +9707,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money: 99999'
+  m_text: 'Money: 123456'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
+  m_sharedMaterial: {fileID: 5977635794522359019, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9734,8 +9734,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9803,8 +9803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 136, y: -43.3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 231.3056, y: -43.30005}
+  m_SizeDelta: {x: 390.6111, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1661467926
 GameObject:
@@ -9865,8 +9865,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Current level: 1'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
+  m_sharedMaterial: {fileID: 5977635794522359019, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10641,8 +10641,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Bait Upgrade:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
+  m_sharedMaterial: {fileID: 5977635794522359019, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10853,8 +10853,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Purchase: 3000'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
+  m_sharedMaterial: {fileID: 5977635794522359019, guid: ec4bbcd5073c9c6448226d48d3cb40ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
