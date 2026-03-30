@@ -19,7 +19,14 @@ public class BaseHuman : MonoBehaviour
         moveSpeed = data != null ? data.MoveSpeed : 0f;
         despawnAtTime = Time.time + Mathf.Max(0f, lifetimeSeconds);
 
-        Instantiate(data.ModelPrefab, transform);
+        GameObject model = Instantiate(data.ModelPrefab, transform);
+
+        if (data.OverrideMaterial != null)
+        {
+            Renderer r = model.GetComponentInChildren<Renderer>(includeInactive: true);
+            if (r != null)
+                r.material = data.OverrideMaterial;
+        }
     }
 
     private void Update()
@@ -27,8 +34,6 @@ public class BaseHuman : MonoBehaviour
         transform.position += Vector3.right * (direction * moveSpeed * Time.deltaTime);
 
         if (Time.time >= despawnAtTime)
-        {
             Destroy(gameObject);
-        }
     }
 }

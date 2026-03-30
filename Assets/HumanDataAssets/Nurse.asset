@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ba2370d9ef775f4b9ed817aa8fb6b02, type: 3}
-  m_Name: Police
+  m_Name: Nurse
   m_EditorClassIdentifier: Assembly-CSharp::HumanData
-  DisplayName: Police
-  Value: 8
-  MoveSpeed: 4
+  DisplayName: Nurse
+  Value: 0
+  MoveSpeed: 0
   ModelPrefab: {fileID: 6103284674746234469, guid: 31672976dd436da4aa6d5641cb24e77c, type: 3}
+  OverrideMaterial: {fileID: 2100000, guid: 326c14659a6829b4390507557922901e, type: 2}

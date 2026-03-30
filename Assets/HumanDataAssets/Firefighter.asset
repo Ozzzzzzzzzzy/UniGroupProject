@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ba2370d9ef775f4b9ed817aa8fb6b02, type: 3}
-  m_Name: SeaMine
+  m_Name: Firefighter
   m_EditorClassIdentifier: Assembly-CSharp::HumanData
-  DisplayName: 
-  Value: 0
-  MoveSpeed: 0
-  ModelPrefab: {fileID: 0}
+  DisplayName: Firefighter
+  Value: 8
+  MoveSpeed: 4
+  ModelPrefab: {fileID: 6103284674746234469, guid: 31672976dd436da4aa6d5641cb24e77c, type: 3}
+  OverrideMaterial: {fileID: 2100000, guid: 76b100008ee2f7343968eba92419de86, type: 2}

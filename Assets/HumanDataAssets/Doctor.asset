@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ba2370d9ef775f4b9ed817aa8fb6b02, type: 3}
-  m_Name: Chef
+  m_Name: Doctor
   m_EditorClassIdentifier: Assembly-CSharp::HumanData
-  DisplayName: Chef
-  Value: 6
-  MoveSpeed: 3
+  DisplayName: Doctor
+  Value: 5
+  MoveSpeed: 4
   ModelPrefab: {fileID: 6103284674746234469, guid: 31672976dd436da4aa6d5641cb24e77c, type: 3}
+  OverrideMaterial: {fileID: 2100000, guid: 8254c81c549b9334ebdad41ddbc53853, type: 2}
