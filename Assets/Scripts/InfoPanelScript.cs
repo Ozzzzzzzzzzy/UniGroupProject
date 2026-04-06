@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class InfoPanelScript : MonoBehaviour
 {
+    private const string InfoPanelSeenKey = "UI.InfoPanelSeen";
+
     public bool IsInfoPanelOpen = true;
     public GameObject InfoPanel;
 
@@ -11,12 +13,14 @@ public class InfoPanelScript : MonoBehaviour
 
     private void Start()
     {
+        bool hasSeen = PlayerPrefs.GetInt(InfoPanelSeenKey, 0) == 1;
+
+        IsInfoPanelOpen = !hasSeen;
         SetInfoPanelOpen(IsInfoPanelOpen);
     }
 
     private void Update()
     {
-        
         if (IsInfoPanelOpen == true)
             SetInfoPanelOpen(true);
     }
@@ -24,6 +28,10 @@ public class InfoPanelScript : MonoBehaviour
     public void closeinfopanel()
     {
         IsInfoPanelOpen = false;
+
+        PlayerPrefs.SetInt(InfoPanelSeenKey, 1);
+        PlayerPrefs.Save();
+
         SetInfoPanelOpen(false);
     }
 
@@ -60,5 +68,13 @@ public class InfoPanelScript : MonoBehaviour
             if (playerMovement != null)
                 playerMovement.enabled = true;
         }
+    }
+
+    [ContextMenu("Debug/Reset InfoPanel Seen Flag")]
+    private void DebugResetSeenFlag()
+    {
+        PlayerPrefs.DeleteKey(InfoPanelSeenKey);
+        PlayerPrefs.Save();
+        Debug.Log("[InfoPanelScript] Reset InfoPanelSeen flag.");
     }
 }
