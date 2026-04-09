@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d71b9c22c0cc7164fb4a936ed36216ca
+guid: 04e96729fa654d54493b2be33e6a0dbe
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Gold.001
-    second: {fileID: 2100000, guid: 73307c621185a98449327f28ff0b28e5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Wood
-    second: {fileID: 2100000, guid: 3632a39221c0881449e307f3c61630ba, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Wood.001
-    second: {fileID: 2100000, guid: 20e8a07cf4354e34da62abb8686ac275, type: 2}
+      name: Material.004
+    second: {fileID: 2100000, guid: e6191d6ae0316234897cf9f539efb690, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +40,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
