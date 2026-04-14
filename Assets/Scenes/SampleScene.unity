@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 842e55478946d2d438cfc9c90a417190, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d37de93205f46fa4eb8ee74c222a36bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -536,8 +536,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 36273961}
   - {fileID: 437239326}
+  - {fileID: 36273961}
   - {fileID: 1041205500}
   - {fileID: 61410237}
   - {fileID: 1361141619}
