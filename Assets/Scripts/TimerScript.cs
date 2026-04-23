@@ -12,7 +12,10 @@ public class TimerScript : MonoBehaviour
 
     void Start()
     {
-        TimeLeft = DefaultTime;
+        int timeLevel = UpgradeManager.LoadTimeUpgradeLevel();
+        int extraSeconds = UpgradeManager.GetExtraFishingSeconds(timeLevel);
+
+        TimeLeft = DefaultTime + extraSeconds;
     }
 
     void Update()

@@ -24,12 +24,17 @@ public class ShopScript : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Rigidbody playerRigidbody;
 
+    [Header("Time Upgrade UI")]
+    [SerializeField] private TextMeshProUGUI timeLevelText;
+    [SerializeField] private TextMeshProUGUI timeCostText;
+
     private void Awake()
     {
         input = new InputSystem_Actions();
         shopPanel.SetActive(false);
 
         UpdateBaitUpgradeUI();
+        UpdateTimeUpgradeUI();
     }
 
     private void OnEnable()
@@ -57,8 +62,8 @@ public class ShopScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-                cinemachineRotationControl.enabled = true;
-                playerMovement.enabled = true;
+            cinemachineRotationControl.enabled = true;
+            playerMovement.enabled = true;
         }
         else
         {
@@ -68,13 +73,13 @@ public class ShopScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-                cinemachineRotationControl.enabled = false;
-                playerMovement.enabled = false;
-                playerRigidbody.linearVelocity = Vector3.zero;
-                playerRigidbody.angularVelocity = Vector3.zero;
-            
+            cinemachineRotationControl.enabled = false;
+            playerMovement.enabled = false;
+            playerRigidbody.linearVelocity = Vector3.zero;
+            playerRigidbody.angularVelocity = Vector3.zero;
 
             UpdateBaitUpgradeUI();
+            UpdateTimeUpgradeUI();
         }
     }
 
@@ -116,6 +121,17 @@ public class ShopScript : MonoBehaviour
         UpdateBaitUpgradeUI();
     }
 
+    public void TimeUpgrade()
+    {
+        int level = UpgradeManager.LoadTimeUpgradeLevel();
+        int cost = UpgradeManager.GetTimeUpgradeCost(level);
+
+        if (currencyManager.TrySpend(cost))
+            upgradeManager.UpgradeTime();
+
+        UpdateTimeUpgradeUI();
+    }
+
     private void UpdateBaitUpgradeUI()
     {
         int level = UpgradeManager.LoadBaitUpgradeLevel();
@@ -123,5 +139,17 @@ public class ShopScript : MonoBehaviour
 
         baitLevelText.text = "Bait Level: " + level;
         baitCostText.text = "Cost: " + cost;
+    }
+
+    private void UpdateTimeUpgradeUI()
+    {
+        if (timeLevelText == null || timeCostText == null)
+            return;
+
+        int level = UpgradeManager.LoadTimeUpgradeLevel();
+        int cost = UpgradeManager.GetTimeUpgradeCost(level);
+
+        timeLevelText.text = "Time Level: " + level;
+        timeCostText.text = "Cost: " + cost;
     }
 }
