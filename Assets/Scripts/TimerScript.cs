@@ -18,14 +18,19 @@ public class TimerScript : MonoBehaviour
         TimeLeft = DefaultTime + extraSeconds;
     }
 
+    public void AddTime(float seconds)
+    {
+        TimeLeft += seconds;
+    }
+
     void Update()
     {
         TimeLeft -= Time.deltaTime;
-        TimerText.text = ("Time Left: " + Mathf.Ceil(TimeLeft).ToString());
+        TimerText.text = "Time Left: " + Mathf.Ceil(TimeLeft).ToString();
 
-        if (TimeLeft < 0)
+        if (TimeLeft < 0f)
         {
-            TimeLeft = 0;
+            TimeLeft = 0f;
 
             int currentCurrency = PlayerPrefs.GetInt(CurrencyManager.CurrencyData, 0);
             PlayerPrefs.SetInt(CurrencyManager.CurrencyData, currentCurrency + ScoreManager.CurrentScore);

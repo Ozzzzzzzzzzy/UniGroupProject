@@ -9,6 +9,13 @@ public class HumanData : ScriptableObject
 
     public GameObject ModelPrefab;
 
-
     public Material OverrideMaterial;
+
+    [Header("Special")]
+    public bool IsClockPickup = false;
+    public int TimeBonusSeconds = 5;
+
+    [Header("Model Offset")]
+    public Vector3 ModelLocalRotationEuler = Vector3.zero;
+    public bool FlipModelWithDirection = false;
 }

@@ -21,6 +21,14 @@ public class BaseHuman : MonoBehaviour
 
         GameObject model = Instantiate(data.ModelPrefab, transform);
 
+        // Optional per-type offset
+        if (data != null)
+            model.transform.localRotation *= Quaternion.Euler(data.ModelLocalRotationEuler);
+
+        // Per-instance facing fix (this is the important part)
+        if (data != null && data.FlipModelWithDirection && direction < 0)
+            model.transform.localRotation *= Quaternion.Euler(0f, 180f, 0f);
+
         if (data.OverrideMaterial != null)
         {
             Renderer r = model.GetComponentInChildren<Renderer>(includeInactive: true);

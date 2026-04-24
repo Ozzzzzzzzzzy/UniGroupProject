@@ -84,6 +84,13 @@ public class UpgradeManager : MonoBehaviour
         return (timeUpgradeLevel - 1) * SecondsPerTimeUpgrade;
     }
 
+    public static int GetClockBonusSeconds(int timeUpgradeLevel)
+    {
+        timeUpgradeLevel = Mathf.Max(1, timeUpgradeLevel);
+
+        return 4 + timeUpgradeLevel;
+    }
+
     [ContextMenu("Debug/Log Upgrades (Prefs + Runtime)")]
     private void DebugLogUpgrades()
     {

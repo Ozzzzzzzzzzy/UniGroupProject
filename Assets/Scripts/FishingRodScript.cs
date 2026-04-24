@@ -9,6 +9,7 @@ public class FishingRod : MonoBehaviour
     [SerializeField] private Transform Hook;
 
     [SerializeField] private ScoreManager ScoreManager;
+    [SerializeField] private TimerScript TimerScript;
 
     private enum State
     {
@@ -73,6 +74,16 @@ public class FishingRod : MonoBehaviour
 
                 if (caughtHuman != null)
                 {
+                    if (caughtHuman.Data != null && caughtHuman.Data.IsClockPickup)
+                    {
+                        if (TimerScript != null)
+                            TimerScript.AddTime(caughtHuman.Data.TimeBonusSeconds);
+
+                        Destroy(caughtHuman.gameObject);
+                        caughtHuman = null;
+                        return;
+                    }
+
                     int baitLevel = PlayerPrefs.GetInt(UpgradeManager.UpgradeData, 1);
                     float multiplier = UpgradeManager.GetBaitMultiplier(baitLevel);
 
